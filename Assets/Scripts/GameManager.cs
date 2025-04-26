@@ -5,14 +5,17 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameObject gameOverPanel;
+   // public GameObject playerdies;
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
     }
 
+
     public void GameOver()
     {
+       
         Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
     }

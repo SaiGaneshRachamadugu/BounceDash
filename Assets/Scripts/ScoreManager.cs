@@ -10,9 +10,19 @@ public class ScoreManager : MonoBehaviour
     private float score;
     private int coins;
 
+    [Header("Coin Data Reference")]
+    public CoinData coinData;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
+    }
+
+    private void Start()
+    {
+        
+        coins = coinData.playerCoins;
+        UpdateCoinUI();
     }
 
     private void Update()
@@ -24,6 +34,12 @@ public class ScoreManager : MonoBehaviour
     public void AddCoin()
     {
         coins++;
+        coinData.playerCoins = coins; // sync to SO
+        UpdateCoinUI();
+    }
+
+    private void UpdateCoinUI()
+    {
         coinText.text = "Coins: " + coins;
     }
 }

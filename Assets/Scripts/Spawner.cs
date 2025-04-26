@@ -84,7 +84,7 @@ public class Spawner : MonoBehaviour
 
         if (Random.value < 0.5f)
         {
-            return;
+            //return;
 
             Vector3 spikePos = platformPos + new Vector3(0f, 0.5f, 0f);
             spikePool.GetFromPool(spikePos, Quaternion.identity);
@@ -92,7 +92,7 @@ public class Spawner : MonoBehaviour
 
         if (Random.value < 0.3f)
         {
-            return;
+            //return;
             Vector3 bladePos = new Vector3(Random.Range(minX, maxX), nextSpawnY + Random.Range(1f, 2f), 0f);
             bladePool.GetFromPool(bladePos, Quaternion.identity);
         }

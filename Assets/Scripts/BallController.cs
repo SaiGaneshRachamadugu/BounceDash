@@ -38,5 +38,9 @@ public class BallController : MonoBehaviour
         {
             Bounce();
         }
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            GameManager.Instance.GameOver();
+        }
     }
 }

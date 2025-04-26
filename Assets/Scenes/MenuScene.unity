@@ -395,6 +395,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinData: {fileID: 11400000, guid: f9760a51348a5fc4ea04e920bbb9f7bd, type: 2}
   shopItems:
+  - {fileID: 11400000, guid: df664569dea398b4b83fe8f391543b3f, type: 2}
+  - {fileID: 11400000, guid: 92467540de080764e8f860b47542a3f3, type: 2}
+  - {fileID: 11400000, guid: 61c893a688a39dc4982ed88f07aae419, type: 2}
+  - {fileID: 11400000, guid: 7e6c7bb9f190f7d4aa4022a0762692ee, type: 2}
+  - {fileID: 11400000, guid: 7c8b719c75946b145ad5c2758e39edff, type: 2}
+  - {fileID: 11400000, guid: ebb59ec4aca1096458e137b53d93501a, type: 2}
+  - {fileID: 11400000, guid: c524fed5fe62a9941928cbce307d2279, type: 2}
   - {fileID: 11400000, guid: 5ba25637bcdc0434493e7d2a73c30dbc, type: 2}
   shopItemPrefab: {fileID: 7870262152618440230, guid: eac47323b9476d943b79a5be88795c77, type: 3}
   shopItemParent: {fileID: 5071545904708158554}

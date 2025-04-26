@@ -1,17 +1,23 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameObject gameOverPanel;
-   // public GameObject playerdies;
+    // public GameObject playerdies;
+    public Button OKbutton;
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
     }
 
+    public void LoadMenuScene()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     public void GameOver()
     {
@@ -19,6 +25,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
         gameOverPanel.SetActive(true);
         
+
     }
 
     public void RestartGame()

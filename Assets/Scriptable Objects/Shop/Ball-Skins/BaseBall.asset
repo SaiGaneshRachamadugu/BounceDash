@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d0cf09f1b6f8449ab90bec85e22f7f, type: 3}
+  m_Name: BaseBall
+  m_EditorClassIdentifier: 
+  itemName: BaseBall
+  itemIcon: {fileID: -1751840671389409543, guid: a6dcb20978c199f4abd32e8663af2f6a, type: 3}
+  price: 40

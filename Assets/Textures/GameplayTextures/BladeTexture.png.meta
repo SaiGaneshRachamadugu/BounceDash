@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 25acbf33f34f584459a94a0359a1f541
+guid: dbb153b357948c6418799124ba98c3af
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4146168972737874842
-    second: "\u2014Pngtree\u2014a football_3155312_0"
+      213: 2808358290487799952
+    second: saw-blade-clipart-sm_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u2014Pngtree\u2014a football_3155312_0"
+      name: saw-blade-clipart-sm_0
       rect:
         serializedVersion: 2
-        x: 190
-        y: 228
-        width: 793
-        height: 794
+        x: 0
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66476316949d576c0800000000000000
-      internalID: -4146168972737874842
+      spriteID: 0907c826cfa49f620800000000000000
+      internalID: 2808358290487799952
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u2014Pngtree\u2014a football_3155312_0": -4146168972737874842
+      saw-blade-clipart-sm_0: 2808358290487799952
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

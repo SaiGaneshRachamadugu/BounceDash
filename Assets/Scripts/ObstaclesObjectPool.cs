@@ -44,8 +44,13 @@ public class ObstaclesObjectPool : MonoBehaviour
         return obj;
     }
 
-    public void DisableOffscreenObjects(float cameraY, float threshold)
+    public void DisableOffscreenObjects(float cameraY, float threshold = 10f, bool fromCollider = false)
     {
+        if (fromCollider)
+        {
+            Debug.Log($"@Check {prefab.name}");
+        }
+
         for (int i = 0; i < activeObjects.Count; i++)
         {
             if (activeObjects[i].activeSelf && activeObjects[i].transform.position.y < cameraY - threshold)
@@ -56,4 +61,12 @@ public class ObstaclesObjectPool : MonoBehaviour
             }
         }
     }
+
+    public void DisableCollidedObj(GameObject collidedObj)
+    {
+        Debug.Log("Removing Obj from list...");
+        collidedObj.SetActive(false);
+        activeObjects.Remove(collidedObj);
+    }
+
 }

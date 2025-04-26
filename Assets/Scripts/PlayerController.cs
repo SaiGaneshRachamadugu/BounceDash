@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float bounceForce = 10f;
     private Rigidbody2D rb;
-
+    [SerializeField] ObstaclesObjectPool obstaclesOp;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,7 +38,11 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Coin"))
         {
             ScoreManager.Instance.AddCoin();
-            Destroy(other.gameObject);
+            float cameraY = Camera.main.transform.position.y;
+
+            Debug.Log("CamY : "+cameraY);
+            obstaclesOp.DisableCollidedObj(other.gameObject);
+            //Destroy(other.gameObject);
         }
     }
 }

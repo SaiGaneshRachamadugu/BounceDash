@@ -16,12 +16,16 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0f;
+        SceneManager.LoadScene(0);
         gameOverPanel.SetActive(true);
+        
     }
 
     public void RestartGame()
     {
         Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+       
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -8,12 +9,14 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         startPanel.SetActive(false);
+        SceneManager.LoadScene(1);
     }
 
     private void Start()
     {
         Time.timeScale = 0f;
         startPanel.SetActive(true);
+
     }
 
     public void QuitGame()

@@ -8,7 +8,7 @@ public class ObstaclesObjectPool : MonoBehaviour
     private Queue<GameObject> pool = new Queue<GameObject>();
 
     public List<GameObject> activeObjects = new List<GameObject>();
-
+    private GameObject lastSpawnedObject;
     public bool IsPoolReady { get; private set; } = false;
 
     void Start()
@@ -41,9 +41,14 @@ public class ObstaclesObjectPool : MonoBehaviour
         obj.SetActive(true);
         activeObjects.Add(obj);
         pool.Enqueue(obj);
+
+        lastSpawnedObject = obj;
         return obj;
     }
-
+    public GameObject GetLastSpawned()
+    {
+        return lastSpawnedObject;
+    }
     public void DisableOffscreenObjects(float cameraY, float threshold = 10f, bool fromCollider = false)
     {
         if (fromCollider)

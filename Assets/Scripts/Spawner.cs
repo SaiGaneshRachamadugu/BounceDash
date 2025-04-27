@@ -94,7 +94,8 @@ public class Spawner : MonoBehaviour
         Vector3? bladePos = null;
         if (Random.value < 0.3f)
         {
-            float bladeOffsetX = Random.Range(1.5f, 2.5f); // Blades away from platform
+            // Blades away from platform
+            float bladeOffsetX = Random.Range(1.5f, 2.5f);
             float bladeX = platformPos.x + (platformPos.x > 0 ? bladeOffsetX : -bladeOffsetX);
             bladeX = Mathf.Clamp(bladeX, minX, maxX);
 
@@ -104,7 +105,7 @@ public class Spawner : MonoBehaviour
 
         // 4. Spawn coins
         Vector3 coinPos;
-        int coinPositionType = Random.Range(0, 2); // 0 or 1
+        int coinPositionType = Random.Range(0, 2);
         if (coinPositionType == 0)
         {
             coinPos = platformPos + new Vector3(Random.Range(-0.5f, 0.5f), 2f, 0f);
@@ -118,7 +119,7 @@ public class Spawner : MonoBehaviour
 
         // 5. Adjust positions if too close (blade vs others)
 
-        float minSafeDistance = 1.5f; // You can tweak this
+        float minSafeDistance = 1.5f;
 
         if (bladePos.HasValue)
         {

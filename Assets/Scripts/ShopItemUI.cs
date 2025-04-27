@@ -7,10 +7,12 @@ public class ShopItemUI : MonoBehaviour
     public Image iconImage;
     public TextMeshProUGUI priceText;
     public GameObject tickMark;
+
     private ShopItem shopItem;
     private ShopManager shopManager;
     private bool isOwned = false;
 
+    // Initializes the shop item UI with item data and manager reference
     public void Setup(ShopItem item, ShopManager manager)
     {
         shopItem = item;
@@ -21,6 +23,7 @@ public class ShopItemUI : MonoBehaviour
         CheckOwnership();
     }
 
+    // Checks if the item is already purchased and updates the UI accordingly
     private void CheckOwnership()
     {
         if (PlayerPrefs.GetInt(shopItem.itemName + "_Owned", 0) == 1)
@@ -36,6 +39,7 @@ public class ShopItemUI : MonoBehaviour
         }
     }
 
+    // Called when the player tries to buy the item
     public void OnBuyButtonClick()
     {
         if (!isOwned)
@@ -48,6 +52,7 @@ public class ShopItemUI : MonoBehaviour
         }
     }
 
+    // Updates the UI and state when an item becomes owned
     public void MarkAsOwned()
     {
         isOwned = true;

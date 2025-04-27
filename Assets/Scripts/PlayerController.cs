@@ -6,7 +6,10 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float bounceForce = 10f;
     private Rigidbody2D rb;
-    [SerializeField] ObstaclesObjectPool obstaclesOp;
+
+    [SerializeField] private ObstaclesObjectPool obstaclesOp;
+    [SerializeField] private CoinCollector2D coinCollector;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -17,8 +20,8 @@ public class PlayerController : MonoBehaviour
     {
         float input = Input.GetAxis("Horizontal");
 
-        rb.linearVelocity = new Vector2(input * moveSpeed, rb.linearVelocity.y); 
-        if(Input.GetKey(KeyCode.A))
+        rb.linearVelocity = new Vector2(input * moveSpeed, rb.linearVelocity.y);
+        if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(new Vector2(0, bounceForce), ForceMode2D.Impulse);
             Vector2.Lerp(this.transform.position, new Vector2(0, bounceForce), Time.deltaTime);
@@ -38,11 +41,12 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Coin"))
         {
             ScoreManager.Instance.AddCoin();
-            float cameraY = Camera.main.transform.position.y;
 
-            Debug.Log("CamY : "+cameraY);
+            // Fly animation
+            coinCollector.CollectCoin(other.transform.position);
+
+            // Disable collected coin
             obstaclesOp.DisableCollidedObj(other.gameObject);
-            //Destroy(other.gameObject);
         }
     }
 }

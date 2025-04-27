@@ -67,8 +67,6 @@ public class Spawner : MonoBehaviour
             nextSpawnY += spawnIntervalY;
         }
 
-        // Disable off-screen objects (one per frame)
-
         platformPool.DisableOffscreenObjects(cameraY, disableThreshold);
         spikePool.DisableOffscreenObjects(cameraY, disableThreshold);
         bladePool.DisableOffscreenObjects(cameraY, disableThreshold);
@@ -84,7 +82,7 @@ public class Spawner : MonoBehaviour
         Vector3 platformPos = new Vector3(Random.Range(minX, maxX), nextSpawnY, 0f);
         platformPool.GetFromPool(platformPos, Quaternion.identity);
 
-        // 2. Maybe spawn spike (only 50% chance)
+        // 2. Spawn spike (only 50% chance)
         Vector3? spikePos = null;
         if (Random.value < 0.5f)
         {
@@ -92,7 +90,7 @@ public class Spawner : MonoBehaviour
             spikePool.GetFromPool(spikePos.Value, Quaternion.identity);
         }
 
-        // 3. Maybe spawn blade (30% chance)
+        // 3. Spawn blade (30% chance)
         Vector3? bladePos = null;
         if (Random.value < 0.3f)
         {
@@ -146,8 +144,7 @@ public class Spawner : MonoBehaviour
             }
 
             // Update blade position
-            // You will need to move the blade object in the scene manually (since Pool returns object instance)
-            GameObject bladeObject = bladePool.GetLastSpawned(); // <- You need to implement GetLastSpawned() inside your pooling system
+            GameObject bladeObject = bladePool.GetLastSpawned(); 
             if (bladeObject != null)
             {
                 bladeObject.transform.position = bladePos.Value;

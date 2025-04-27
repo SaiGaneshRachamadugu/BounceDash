@@ -34,7 +34,7 @@ public class ScoreManager : MonoBehaviour
     public void AddCoin()
     {
         coins++;
-        coinData.playerCoins = coins; // sync to SO
+        coinData.playerCoins = coins;
         UpdateCoinUI();
     }
 

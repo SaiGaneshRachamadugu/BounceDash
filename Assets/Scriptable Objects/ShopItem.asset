@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ShopItem
   m_EditorClassIdentifier: 
   itemName: Fireball
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 5052863363586775357, guid: a6dcb20978c199f4abd32e8663af2f6a, type: 3}
   price: 60

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 170140446}
   - component: {fileID: 170140447}
   - component: {fileID: 170140448}
+  - component: {fileID: 170140449}
   m_Layer: 0
   m_Name: Ball-Player
   m_TagString: Untagged
@@ -325,6 +326,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &170140449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170140441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4394da5f1bbb4b24fbf32de2b202f511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableSkins:
+  - {fileID: 11400000, guid: df664569dea398b4b83fe8f391543b3f, type: 2}
+  - {fileID: 11400000, guid: 92467540de080764e8f860b47542a3f3, type: 2}
+  - {fileID: 11400000, guid: 61c893a688a39dc4982ed88f07aae419, type: 2}
+  - {fileID: 11400000, guid: 7e6c7bb9f190f7d4aa4022a0762692ee, type: 2}
+  - {fileID: 11400000, guid: 5ba25637bcdc0434493e7d2a73c30dbc, type: 2}
+  - {fileID: 11400000, guid: c524fed5fe62a9941928cbce307d2279, type: 2}
 --- !u!1 &174095511
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +395,7 @@ MonoBehaviour:
   shopItemPrefab: {fileID: 7870262152618440230, guid: eac47323b9476d943b79a5be88795c77, type: 3}
   shopItemParent: {fileID: 0}
   playerCoinsText: {fileID: 1029949945}
+  msgText: {fileID: 0}
 --- !u!1 &273887504 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1560585694674926266, guid: 31421076708fbfd40aa1cea07fcd253c, type: 3}
@@ -2461,6 +2482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground-0
       objectReference: {fileID: 0}
+    - target: {fileID: 3640176811772950663, guid: 91ca3f60d68e0264f8572b590b865edd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.33333334
+      objectReference: {fileID: 0}
     - target: {fileID: 5246604436912006799, guid: 91ca3f60d68e0264f8572b590b865edd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.12
@@ -2515,7 +2540,7 @@ Transform:
   m_GameObject: {fileID: 1676969735396673677}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12, y: -5.84, z: 10}
+  m_LocalPosition: {x: -0.12, y: -6.94, z: 10}
   m_LocalScale: {x: 33.05785, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

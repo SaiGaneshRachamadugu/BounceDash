@@ -62,7 +62,7 @@ public class ObstaclesObjectPool : MonoBehaviour
             {
                 activeObjects[i].SetActive(false);
                 activeObjects.RemoveAt(i);
-                break; // Only disable one per frame to avoid heavy load
+                break;
             }
         }
     }

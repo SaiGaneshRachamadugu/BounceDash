@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 5632077222861960674, guid: a416c7a5327c1de448699641039a7801, type: 3}
   coinValue: 1
-  playerCoins: 120
+  playerCoins: 1532

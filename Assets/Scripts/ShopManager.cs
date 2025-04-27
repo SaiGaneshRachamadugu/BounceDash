@@ -46,7 +46,8 @@ public class ShopManager : MonoBehaviour
             // Update shop UI to show item as owned
             foreach (ShopItemUI ui in shopItemParent.GetComponentsInChildren<ShopItemUI>())
             {
-                if (ui.name == item.itemName || ui.name.Contains(item.itemName))
+                Debug.Log($"ui - {ui.shopItem.itemName} == {item.itemName} ");
+                if (ui.shopItem.itemName == item.itemName || ui.name.Contains(item.itemName))
                 {
                     ui.MarkAsOwned();
                 }
@@ -59,7 +60,7 @@ public class ShopManager : MonoBehaviour
     }
 
     // Saves the selected skin into PlayerPrefs and shows a temporary message
-    private void SaveSelectedSkin(ShopItem item)
+    public void SaveSelectedSkin(ShopItem item)
     {
         PlayerPrefs.SetString("SelectedSkinName", item.itemName);
         PlayerPrefs.Save();

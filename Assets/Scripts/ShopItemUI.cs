@@ -8,7 +8,7 @@ public class ShopItemUI : MonoBehaviour
     public TextMeshProUGUI priceText;
     public GameObject tickMark;
 
-    private ShopItem shopItem;
+    public ShopItem shopItem;
     private ShopManager shopManager;
     private bool isOwned = false;
 
@@ -49,14 +49,20 @@ public class ShopItemUI : MonoBehaviour
         else
         {
             Debug.Log("Already owned: " + shopItem.itemName);
+
+            shopManager.SaveSelectedSkin(shopItem);
         }
     }
 
     // Updates the UI and state when an item becomes owned
     public void MarkAsOwned()
     {
+        Debug.Log($"Owned - {shopItem.itemName}");
         isOwned = true;
         tickMark.SetActive(true);
         priceText.text = "Owned";
+
+        CheckOwnership();
+
     }
 }

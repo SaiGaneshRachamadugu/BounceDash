@@ -43,6 +43,7 @@ public class ObstaclesObjectPool : MonoBehaviour
         {
             Debug.LogWarning($"Pool empty for {prefab.name}");
             return null;
+            Debug.log("@@back from pool");
         }
 
         GameObject obj = pool.Dequeue();

@@ -4,12 +4,12 @@ using System.Collections;
 public class CoinCollector2D : MonoBehaviour
 {
     [Header("Flying Coin Setup")]
-    public GameObject flyingCoinPrefab;    // 2D coin prefab (sprite)
-    public Transform coinTarget;           // UI target (your coin counter)
-    public float flySpeed = 5f;             // Movement speed
-    public float rotationSpeed = 360f;      // Rotation speed in degrees/second
+    public GameObject flyingCoinPrefab;
+    public Transform coinTarget;
+    public float flySpeed = 5f;
+    public float rotationSpeed = 360f;
 
-    private GameObject flyingCoinInstance; // Single reusable instance
+    private GameObject flyingCoinInstance;
 
     public void CollectCoin(Vector3 startWorldPosition)
     {
@@ -20,7 +20,7 @@ public class CoinCollector2D : MonoBehaviour
 
         flyingCoinInstance.SetActive(true);
         flyingCoinInstance.transform.position = startWorldPosition;
-        flyingCoinInstance.transform.rotation = Quaternion.identity; // Reset rotation
+        flyingCoinInstance.transform.rotation = Quaternion.identity;
         StartCoroutine(FlyAndRotateToTarget(flyingCoinInstance.transform));
     }
 
@@ -29,24 +29,20 @@ public class CoinCollector2D : MonoBehaviour
         Vector3 targetPosition = Camera.main.ScreenToWorldPoint(new Vector3(
             coinTarget.position.x,
             coinTarget.position.y + 20f,
-            10f)); // Make sure it's ahead of camera
+            10f));
         targetPosition.z = 0;
 
         while (Vector3.Distance(flyingCoin.position, targetPosition) > 0.1f)
         {
-            // Move towards target
             flyingCoin.position = Vector3.MoveTowards(
                 flyingCoin.position,
                 targetPosition,
                 flySpeed * Time.deltaTime);
-
-            // Rotate around Z axis (2D rotation)
             flyingCoin.Rotate(Vector3.left, rotationSpeed * Time.deltaTime);
 
             yield return null;
         }
-
-        // After reaching, deactivate
+        
         flyingCoin.gameObject.SetActive(false);
     }
 }
